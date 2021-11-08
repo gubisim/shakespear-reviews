@@ -1,0 +1,52 @@
+.reviews-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overall-rating {
+    font-size: 3.5rem;
+}
+
+.rating-description {
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.review {
+    margin: 2rem 0;
+}
+
+.review-body {
+    margin: 1rem 0;
+}
+
+.review-author {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.review-date {
+    font-style: italic;
+}
+
+.sorting-button {
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  color: #a42f2f;
+  border: 1px solid #a42f2f;
+  background-color: transparent;
+  font-size: 0.875rem;
+  border-radius: 2rem;
+  margin-right: 0.5rem;
+}
+
+:hover.sorting-button {
+  background-color: #641f1f;
+  color: #bbbbbb;
+  cursor: pointer;
+}
+
+.button-group {
+    margin: 4rem 0;
+}
