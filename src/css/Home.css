@@ -4,7 +4,7 @@
   padding-left: 10rem;
 }
 .content-container {
-  padding-top: 5rem;
+  padding-top: 3rem;
   width: 50%;
   padding-right: 3.5rem;
 }
@@ -20,6 +20,7 @@
 
 .headline {
   margin-bottom: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .sub-headline {
@@ -32,4 +33,14 @@
   color: #e15f56;
   margin-bottom: 4rem;
   font-size: 1.35rem;
+}
+
+@media (min-width: 1550px) {
+  .headline {
+    margin-top: 10rem;
+    font-size: 3rem;
+  }
+  .sub-headline {
+    font-size: 1.25rem;
+  }
 }
