@@ -33,15 +33,37 @@ h1 {
   font-size: 2.5rem;
 }
 
+a {
+  text-decoration: none;
+  color: #bbbbbb;
+}
+
 .primary-button {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   font-weight: 600;
   color: #bbbbbb;
   background-color: #a42f2f;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 
 :hover.primary-button {
   background-color: #641f1f;
   cursor: pointer;
+}
+
+.page {
+  padding-left: 10rem;
+  padding-top: 5rem;
+}
+
+.text-muted {
+  color: #8E8E8E;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
 }
