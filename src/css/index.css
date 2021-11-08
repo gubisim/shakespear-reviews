@@ -52,18 +52,31 @@ a {
 }
 
 .page {
-  padding-left: 10rem;
-  padding-top: 5rem;
+  padding: 3rem 2rem;
 }
 
 .text-muted {
-  color: #8E8E8E;
+  color: #959595;
 }
 
 .flex {
   display: flex;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .align-items-center {
   align-items: center;
+}
+
+.justify-content-center {
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 3rem 10rem;
+  }
 }
