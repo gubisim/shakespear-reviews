@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Home from "./Home";
+import Reviews from "./Reviews";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/reviews" element={<Reviews/>}/>
         </Routes>
       </Router>
     </div>
