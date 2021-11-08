@@ -6,13 +6,13 @@
 .content-container {
   padding-top: 5rem;
   width: 50%;
-  padding-right: 3rem;
+  padding-right: 3.5rem;
 }
 
 .image-container {
-  width: 50%;
+  width: 60%;
   height: 100%;
-  opacity: 0.55;
+  opacity: 0.40;
   background-image: url("../images/background-large.jpg");
   background-size: cover;
   background-position: right;
@@ -29,7 +29,7 @@
 
 .brand {
   font-weight: 700;
-  color: #E15F56;
+  color: #e15f56;
   margin-bottom: 4rem;
   font-size: 1.35rem;
 }
