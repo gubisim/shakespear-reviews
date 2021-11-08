@@ -18,7 +18,7 @@ export default function Stars({ rating, small }) {
     return starComponents;
   }, [rating]);
   return (
-    <div>
+    <div title={`${rating} rating`}>
       {stars &&
         stars.map((component, index) => <span key={index}>{component}</span>)}
     </div>
@@ -26,11 +26,11 @@ export default function Stars({ rating, small }) {
 }
 
 function Star({small}) {
-  return <img src="/src/images/star.svg" className={small ? 'small-star' : 'medium-star'}/>;
+  return <img src="/src/images/star.svg" alt="Filled in star" className={small ? 'small-star' : 'medium-star'}/>;
 }
 function HalfStar({small}) {
-  return <img src="/src/images/half-star.svg" className={small ? 'small-star' : 'medium-star'}/>;
+  return <img src="/src/images/half-star.svg" alt="Half filled in star" className={small ? 'small-star' : 'medium-star'}/>;
 }
 function EmptyStar({small}) {
-  return <img src="/src/images/empty-star.svg" className={small ? 'small-star' : 'medium-star'}/>;
+  return <img src="/src/images/empty-star.svg" alt="Empty star" className={small ? 'small-star' : 'medium-star'}/>;
 }
