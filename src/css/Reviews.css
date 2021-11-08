@@ -9,21 +9,24 @@
 }
 
 .rating-description {
-    font-size: 1.25rem;
-    font-weight: 800;
+    font-size: 1.15rem;
+    font-weight: 700;
 }
 
 .review {
     margin: 2rem 0;
+    width: 45rem;
+    max-width: 75%;
 }
 
 .review-body {
-    margin: 1rem 0;
+    margin: 0.35rem 0;
+    line-height: 1.5rem;
 }
 
 .review-author {
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .review-date {
@@ -36,17 +39,30 @@
   color: #a42f2f;
   border: 1px solid #a42f2f;
   background-color: transparent;
-  font-size: 0.875rem;
   border-radius: 2rem;
   margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.sorting-button.active {
+    background-color: #a42f2f;
+    color: #bbbbbb;  
 }
 
 :hover.sorting-button {
-  background-color: #641f1f;
+  background-color: #a42f2f;
   color: #bbbbbb;
   cursor: pointer;
 }
 
 .button-group {
-    margin: 4rem 0;
+    margin: 3rem 0;
+    width: 45rem;
+    max-width: 75%;
 }
+
+@media (min-width: 1550px) {
+   .rating-description {
+       margin-top: 2rem;
+   }
+  }
