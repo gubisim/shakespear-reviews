@@ -22,7 +22,7 @@
   margin-left: -10px;
   border-radius: 50%;
   border: 2px solid #a42f2f;
-  border-top-color: #000;
+  border-top-color: #131322;
   animation: spinner 0.6s linear infinite;
 }
 .overall-rating {
