@@ -11,7 +11,7 @@ export default function Home() {
             <div className="brand">Shakespeare Reviews</div>
           </Link>
           <h1 className="headline">
-            100+ reviews of Shakespeare's beloved classics
+            100+ reviews of Shakespeare&apos;s beloved classics
           </h1>
           <p className="content sub-headline">
             See what the thinkers of today are saying and how they are
