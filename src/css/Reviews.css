@@ -35,9 +35,9 @@
 }
 
 .review {
-  margin: 2rem 0;
+  margin: 1rem 0;
   width: 45rem;
-  max-width: 75%;
+  max-width: 80%;
 }
 
 .review-body {
@@ -55,14 +55,15 @@
 }
 
 .sorting-button {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
   font-weight: 600;
   color: #a42f2f;
   border: 1px solid #a42f2f;
   background-color: transparent;
   border-radius: 2rem;
-  margin-right: 0.5rem;
-  font-size: 1rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
 }
 
 .sorting-button.active {
@@ -77,11 +78,23 @@
 }
 
 .button-group {
-  margin: 3rem 0;
+  margin: 2rem 0;
   width: 45rem;
-  max-width: 75%;
+  max-width: 80%;
 }
-
+@media (min-width: 768px) {
+  .review {
+    margin: 2rem 0
+  }
+  .button-group {
+    margin: 3rem 0;
+  }
+  .sorting-button {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.5rem;
+  }
+}
 @media (min-width: 1550px) {
   .rating-description {
     margin-top: 2rem;
