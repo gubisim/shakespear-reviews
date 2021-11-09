@@ -1,26 +1,120 @@
 import Brand from "./Brand";
 import Stars from "./Stars";
 import "../css/Reviews.css";
+import { useState, useEffect, useMemo } from "react";
+import { orderBy } from "lodash";
 
 export default function Reviews() {
+  const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [sortBy, setSortBy] = useState("DATE_DESC");
+
+  function formatDate(date) {
+    const formattedDate = new Date(date);
+    return formattedDate.toLocaleString();
+  }
+
+  function sort(sortMethod) {
+    if (sortMethod === sortBy) {
+      return;
+    }
+    setSortBy(sortMethod);
+    switch (sortMethod) {
+      case "DATE_ASC":
+        setReviews(orderBy(reviews, (x) => x.publish_date, "asc"))
+        break;
+      case "DATE_DESC":
+        setReviews(orderBy(reviews, (x) => x.publish_date, "desc"))
+        break;
+      case "RATING_ASC":
+        setReviews(orderBy(reviews, (x) => x.rating, "asc"))
+        break;
+      case "RATING_DESC":
+        setReviews(orderBy(reviews, (x) => x.rating, "desc"))
+        break;
+      default:
+        break;
+    }
+  }
+
+  useEffect(() => {
+    fetch("https://shakespeare.podium.com/api/reviews", {
+      method: "GET",
+      headers: new Headers({
+        "x-api-key": "H3TM28wjL8R4#HTnqk?c",
+      }),
+    })
+      .then(async (response) => {
+        const res = await response.json() 
+        setReviews(orderBy(res, (x) => x.publish_date, "desc"));
+        setIsLoading(false);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  const averageRating = useMemo(() => {
+    let total = 0;
+    if (reviews.length) {
+      for (let review of reviews) {
+        total += review.rating;
+      }
+      return total / reviews.length + 1;
+    }
+    return total;
+  }, [reviews]);
+
   return (
     <div className="page">
       <Brand />
       <div className="reviews-header flex align-items-center">
-        <div className="text-muted rating-description">Overall Rating</div>
-        <h1 className="overall-rating">3.5</h1>
-        <Stars rating={3.5} />
+        <div className="text-muted rating-description">Average Rating</div>
+        <h1 className="overall-rating">{averageRating.toFixed(1)}</h1>
+        <Stars rating={averageRating.toFixed(1)} />
       </div>
+      <div className="flex flex-col align-items-center">
       <div className="button-group">
-        <button className="sorting-button">Highest Rating</button>
-        <button className="sorting-button">Lowest Rating</button>
-        <button className="sorting-button">Most Recent</button>
-        <button className="sorting-button">Oldest</button>
+        <button
+          onClick={() => sort("DATE_DESC")}
+          className={`sorting-button ${sortBy === "DATE_DESC" ? "active" : ""}`}
+        >
+          Most Recent
+        </button>
+        <button
+          onClick={() => sort("DATE_ASC")}
+          className={`sorting-button ${sortBy === "DATE_ASC" ? "active" : ""}`}
+        >
+          Oldest
+        </button>
+        <button
+          onClick={() => sort("RATING_DESC")}
+          className={`sorting-button ${
+            sortBy === "RATING_DESC" ? "active" : ""
+          }`}
+        >
+          Highest Rating
+        </button>
+        <button
+          onClick={() => sort("RATING_ASC")}
+          className={`sorting-button ${
+            sortBy === "RATING_ASC" ? "active" : ""
+          }`}
+        >
+          Lowest Rating
+        </button>
       </div>
-      <div className="review">
-        <Stars rating={3.5} small={true}/>
-        <p className="review-body">"The fool doth think he is wise, but the wise man knows himself to be a fool."</p>
-        <p><span className="review-author">Kaley Schiller</span> <span className="text-muted review-date">October 23, 2016</span></p>
+        {reviews &&
+          reviews.map((review) => (
+            <div className="review" key={review.id}>
+              <Stars rating={review.rating} small={true} />
+              <p className="review-body">{review.body}</p>
+              <p>
+                <span className="review-author">{review.author}</span>{" "}
+                <span className="text-muted review-date">
+                  {formatDate(review.publish_date)}
+                </span>
+              </p>
+            </div>
+          ))}
       </div>
     </div>
   );
