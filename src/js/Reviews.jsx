@@ -11,8 +11,8 @@ export default function Reviews() {
 
   function formatDate(date) {
     const formattedDate = new Date(date);
-    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return formattedDate.toLocaleString(options);
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return formattedDate.toLocaleString('en-US', options);
   }
 
   function sort(sortMethod) {
