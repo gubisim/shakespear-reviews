@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import "../css/Stars.css";
 import React from "react";
 
-export default function Stars({ rating, small }) {
+export default function Stars({ rating, small }: { rating: number, small: boolean}) {
   const stars = useMemo(() => {
     let starRating = rating;
     let starComponents = [];
