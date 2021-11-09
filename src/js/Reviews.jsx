@@ -42,7 +42,7 @@ export default function Reviews() {
     fetch("https://shakespeare.podium.com/api/reviews", {
       method: "GET",
       headers: new Headers({
-        // API key should be stored as an ENV var server side
+        // TODO API key should be stored as an ENV var server side
         "x-api-key": "H3TM28wjL8R4#HTnqk?c",
       }),
     })
