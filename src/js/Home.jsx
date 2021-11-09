@@ -1,15 +1,14 @@
 import "../css/Home.css";
 import { Link } from "react-router-dom";
 import React from "react";
+import Brand from "./Brand";
 
 export default function Home() {
   return (
     <div>
       <div className="main-container flex">
         <div className="content-container">
-          <Link to="/">
-            <div className="brand">Shakespeare Reviews</div>
-          </Link>
+          <Brand/>
           <h1 className="headline">
             100+ reviews of Shakespeare&apos;s beloved classics
           </h1>
