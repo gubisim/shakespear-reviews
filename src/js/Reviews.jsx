@@ -3,6 +3,7 @@ import Stars from "./Stars";
 import "../css/Reviews.css";
 import { useState, useEffect, useMemo } from "react";
 import { orderBy } from "lodash";
+import React from "react";
 
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);

@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import "../css/Stars.css";
+import React from "react";
 
 export default function Stars({ rating, small }) {
   const stars = useMemo(() => {

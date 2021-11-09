@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation,
 } from "react-router-dom";
 import Home from "./Home";
 import Reviews from "./Reviews";
+import React from "react";
 
 function App() {
 
