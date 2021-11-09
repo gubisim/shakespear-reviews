@@ -11,7 +11,8 @@ export default function Reviews() {
 
   function formatDate(date) {
     const formattedDate = new Date(date);
-    return formattedDate.toLocaleString();
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return formattedDate.toLocaleString(options);
   }
 
   function sort(sortMethod) {
@@ -62,6 +63,13 @@ export default function Reviews() {
     }
     return total;
   }, [reviews]);
+
+  if (isLoading) {
+    return <div className="page">
+      <Brand />
+      <div className="spinner"/>
+    </div>
+  }
 
   return (
     <div className="page">
