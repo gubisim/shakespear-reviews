@@ -1,0 +1,12 @@
+.brand {
+  font-weight: 700;
+  color: #e15f56;
+  margin-bottom: 4rem;
+  font-size: 1.15rem;
+}
+
+@media (min-width: 768px) {
+  .brand {
+    font-size: 1.35rem;
+  }
+}
