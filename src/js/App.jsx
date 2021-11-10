@@ -4,8 +4,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Home from "./Home";
-import Reviews from "./Reviews";
+import Home from "./pages/Home";
+import Reviews from "./pages/Reviews";
 import React from "react";
 
 function App() {

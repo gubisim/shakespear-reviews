@@ -1,6 +1,6 @@
-import Brand from "./Brand";
-import Stars from "./Stars";
-import "../css/Reviews.css";
+import Brand from "../components/Brand";
+import Stars from "../components/Stars";
+import "../../css/Reviews.css";
 import { useState, useEffect, useMemo } from "react";
 import { orderBy } from "lodash";
 import React from "react";

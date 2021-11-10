@@ -1,7 +1,7 @@
-import "../css/Home.css";
+import "../../css/Home.css";
 import { Link } from "react-router-dom";
 import React from "react";
-import Brand from "./Brand";
+import Brand from "../components/Brand";
 
 export default function Home() {
   return (
