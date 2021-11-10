@@ -1,6 +1,8 @@
-import { useMemo } from "react";
 import "../../css/Stars.css";
-import React from "react";
+import React, {useMemo} from 'react';
+import star from '../../images/star.svg';
+import halfStar from '../../images/half-star.svg';
+import emptyStar from '../../images/empty-star.svg';
 
 export default function Stars({ rating, small }: { rating: number, small: boolean}) {
   const stars = useMemo(() => {
@@ -17,7 +19,7 @@ export default function Stars({ rating, small }: { rating: number, small: boolea
       starRating = starRating - 1;
     }
     return starComponents;
-  }, [rating]);
+  }, [rating, small]);
   return (
     <div title={`${rating} rating`}>
       {stars &&
@@ -26,12 +28,12 @@ export default function Stars({ rating, small }: { rating: number, small: boolea
   );
 }
 
-function Star({small}) {
-  return <img src="/src/images/star.svg" alt="Filled in star" className={small ? 'small-star' : 'medium-star'}/>;
+function Star({small} : {small: boolean}) {
+  return <img src={star} alt="Filled in star" className={small ? 'small-star' : 'medium-star'}/>;
 }
-function HalfStar({small}) {
-  return <img src="/src/images/half-star.svg" alt="Half filled in star" className={small ? 'small-star' : 'medium-star'}/>;
+function HalfStar({small} : {small: boolean}) {
+  return <img src={halfStar} alt="Half filled in star" className={small ? 'small-star' : 'medium-star'}/>;
 }
-function EmptyStar({small}) {
-  return <img src="/src/images/empty-star.svg" alt="Empty star" className={small ? 'small-star' : 'medium-star'}/>;
+function EmptyStar({small} : {small: boolean}) {
+  return <img src={emptyStar} alt="Empty star" className={small ? 'small-star' : 'medium-star'}/>;
 }
